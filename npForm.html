@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Navigate</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        body {
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+        .topnav {
+                overflow: hidden;
+                background-color: #8938d5;
+            }
+
+        .topnav a { /**words on nav bar**/
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+        .topnav a:hover {
+                background-color: #fdfdfd;
+                color: black;
+            }
+        .center {
+                margin: auto;
+                width: 60%;
+                border: 3px solid;
+                padding: 10px;
+                text-align: center;
+            }
+            .btn {
+                background-color: #FFC0CB;
+                right: 0;
+                margin-top: 10px;
+            }
+           .btn:hover, .btn:active, .btn:focus {
+                color: #fff;
+            }
+    </style>
+    </head>
+    <body style="background-color: rgb(7, 16, 75);">
+        <div class="topnav">
+        <a href="#home">Home</a>
+        <a href="#pay">Pay</a>
+        <a href="#reserve">Reserve</a>
+        <a href="npForm.html">Navigate</a>
+        </div>
+        <br>
+        <form style="text-align:center;">
+            <br>
+            <h1 style="color:white; text-align: center">Let's find your car!</h1>
+            <div class="center" style="background-color:#fff">
+            <h3>Enter details</h3>
+            <h4 style="color:rgb(183, 183, 183)">Please fill out this form</h4>
+            <hr>
+            Parking Id: <br>
+            <input type="text" name="parkingId"><br/><br/>
+            Name: <br>
+            <input type="text" name="name"><br/><br/>
+            Car model: <br>
+            <input type="text" name="carModel"><br/><br/>
+            Car color: <br>
+            <input type="text" name="carColor"><br/><br/>
+            Plate number: <br>
+            <input type="text" name="plateNumber"><br/><br/>
+            <input type="button" onclick="document.location='npDisplayLocation.html'" value="Submit">&nbsp;&nbsp;<input type="reset" value="Reset">
+           
+            </div>
+        </form>
+        <br>
+    </body>
+</html>
