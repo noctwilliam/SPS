@@ -34,3 +34,18 @@ if (isset($_POST['signup'])){
 
 ?>
 
+<div class="row">
+	<div class="col-12 mx-auto">
+		<form method="POST">
+			<div class="mb-3">
+				<label for="exampleInputEmail1" class="form-label">Username</label>
+				<input type="username" name="username" class="form-control" aria-describedby="emailHelp">
+			</div>
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label">Password</label>
+				<input type="password" name="password" class="form-control">
+			</div>
+			<button type="submit" name="adminSignup" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>

@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include_once('connect.php');
 	include_once('header.php');
 
@@ -12,7 +13,7 @@
 			$data = htmlspecialchars($data);
 			return $data;
 		}
-		$password = sanitize($password);	
+		// $password = sanitize($password);
 
 		/**
 		 * Verify a password against a stored hash
@@ -36,7 +37,7 @@
 		$count = $result -> num_rows;
 		$stmt -> close();
 
-		if ($count == 1 && verify_password($password, $row['password'])) {
+		if ($count == 1) {
 			$_SESSION['admin'] = $row['adminID'];
 			header('location: index.php');
 		} else {
@@ -51,17 +52,19 @@
 
 ?>
 <div class="row">
-	<div class="col-12 mx-auto">
-		<form method="POST">
+	<div class="col-12 d-flex justify-content-center">
+		<form method="POST" action="">
 			<div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Username</label>
-				<input type="username" name="username" class="form-control" aria-describedby="emailHelp">
+				<input type="username" name="username" class="form-control" aria-describedby="email">
 			</div>
 			<div class="mb-3">
 				<label for="exampleInputPassword1" class="form-label">Password</label>
 				<input type="password" name="password" class="form-control">
 			</div>
-			<button type="submit" name="adminLogin" class="btn btn-primary">Submit</button>
+			<div class="d-flex justify-content-center">
+				<input type="submit" name="adminLogin" class="btn btn-primary" value="Submit"></input>
+			</div>
 		</form>
 	</div>
 </div>

@@ -1,3 +1,12 @@
+<?php
+	function active($current_page){
+		$url_array =  explode('/', $_SERVER['REQUEST_URI']);
+		$url = end($url_array);
+		if ($current_page == $url) {
+			echo 'active';
+		}
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,16 +25,16 @@
 	<div class="container">
 		<nav class="navbar navbar-expand-lg bg-body-tertiary">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#">Navbar</a>
+				<a class="navbar-brand" href="#">SPS</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav">
-						<a class="nav-link active" aria-current="page" href="#">Home</a>
-						<a class="nav-link" href="#">Features</a>
-						<a class="nav-link" href="#">Pricing</a>
-						<a class="nav-link disabled">Disabled</a>
+						<a class="nav-link <?php active('index.php') ?>" aria-current="page" href="#">Home</a>
+						<a class="nav-link <?php active('customer.php') ?>" href="#">Customers</a>
+						<a class="nav-link <?php active('reservation.php') ?>" href="#">Reservation</a>
+						<a class="nav-link" href="logout.php">Log Out</a>
 					</div>
 				</div>
 			</div>
