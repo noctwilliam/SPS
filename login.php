@@ -38,6 +38,7 @@
 		$stmt -> close();
 
 		if ($count == 1) {
+			$_SESSION['username'] = $row['username'];
 			$_SESSION['admin'] = $row['adminID'];
 			header('location: index.php');
 		} else {
