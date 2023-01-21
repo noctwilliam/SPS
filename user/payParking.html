@@ -19,6 +19,10 @@ and open the template in the editor.
                 overflow: hidden;
                 background-color: #8938d5;
             }
+            .form {
+                border-radius: 7px;
+                box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.12);
+            }
             .topnav a {
                 /**words on nav bar**/
                 float: left;
@@ -61,61 +65,37 @@ and open the template in the editor.
 
     <body style="background-color: rgb(7, 16, 75)">
         <div class="topnav">
-            <a href="home.html"><img style="height: 1cm" src="logos.jpeg" /></a>
+            <a href="home.html"><img style="height: 1cm" src="../assets/img/smart-parking.png" /></a>
             <a href="payParking.html">Pay</a>
             <a href="reserveParking.html">Reserve</a>
             <a href="navigateParking.html">Navigate</a>
         </div>
         <br />
-        <h1 style="color: white; text-align: center">Parking Payment</h1>
-        <div class="center" style="background-color: #fff">
-            <h3>Parking Details</h3>
-            <hr />
-            <table class="center" style="border-color: #fff; text-align: left">
-                <tr>
-                    <td>Payment id</td>
-                    <td>Nav110-PID1202</td>
-                </tr>
-                <tr>
-                    <td>Parking id</td>
-                    <td>PID1202</td>
-                </tr>
-                <tr>
-                    <td>Plate Number</td>
-                    <td>KFG 5994</td>
-                </tr>
-                <tr>
-                    <td>From</td>
-                    <td>14/1/2023 10:30am</td>
-                </tr>
-                <tr>
-                    <td>To</td>
-                    <td>14/1/2023 03:30pm</td>
-                </tr>
-                <tr>
-                    <td>Total Hours</td>
-                    <td>5 Hours</td>
-                </tr>
-                <tr>
-                    <td>Amount due</td>
-                    <td>RM 10.00</td>
-                </tr>
-                <tr>
-                    <td>Status</td>
-                    <td><b>Successful</b></td>
-                </tr>
-            </table>
+        <form style="align: center">
             <br />
-            <button
-                class="btn btn-rounded"
-                type="button"
-                onclick="document.location='home.html'"
-                value="Main Menu"
-            >
-                Main Menu
-            </button>
-            <br />
-        </div>
+            <h1 style="color: white; text-align: center">Parking Payment</h1>
+            <div class="center" style="background-color: #fff">
+                <h3>Enter details</h3>
+                <hr />
+                Parking id: <br />
+                <input type="text" name="parkingId" /><br /><br />
+                <h4 style="color: rgb(183, 183, 183)">or</h4>
+                <br />
+                Plate number: <br />
+                <input type="text" name="plateNumber" /><br /><br />
+                <button
+                    class="btn btn-rounded"
+                    type="button"
+                    onclick="document.location='paymentParking.html'"
+                >
+                    Submit</button
+                >&nbsp;&nbsp;<input
+                    type="reset"
+                    value="Reset"
+                    class="btn btn-rounded"
+                />
+            </div>
+        </form>
         <br />
     </body>
 </html>

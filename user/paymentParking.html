@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+    To change this license header, choose License Headers in Project Properties.
+    To change this template file, choose Tools | Templates
+    and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pay</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial;
+            }
+
+            .topnav {
+                overflow: hidden;
+                background-color: #8938d5;
+            }
+
+            .topnav a {
+                /**words on nav bar**/
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+            .topnav a:hover {
+                background-color: #fdfdfd;
+                color: black;
+            }
+            .center {
+                margin: auto;
+                width: 60%;
+                border: 3px solid;
+                padding: 10px;
+                text-align: center;
+            }
+            .btn {
+                background-color: #ffc0cb;
+                right: 0;
+                margin-top: 10px;
+            }
+            .btn:hover,
+            .btn:active,
+            .btn:focus {
+                color: #fff;
+            }
+        </style>
+    </head>
+
+    <body style="background-color: rgb(7, 16, 75)">
+        <div class="topnav">
+            <a href="home.html"><img style="height: 1cm" src="../mad/smart-parking.png" /></a>
+            <a href="payParking.html">Pay</a>
+            <a href="reserveParking.html">Reserve</a>
+            <a href="navigateParking.html">Navigate</a>
+        </div>
+        <br />
+        <div class="center" style="background-color: #fff">
+            <h3>Payment Amount</h3>
+            <hr />
+            <table class="center" style="border-color: #fff; text-align: left">
+                <tr>
+                    <td>Plate Number</td>
+                    <td>KFG 5994</td>
+                </tr>
+                <tr>
+                    <td>From</td>
+                    <td>14/1/2023 10:30am</td>
+                </tr>
+                <tr>
+                    <td>To</td>
+                    <td>14/1/2023 03:30pm</td>
+                </tr>
+                <tr>
+                    <td>Amount due</td>
+                    <td>RM 10.00</td>
+                </tr>
+            </table>
+        </div>
+        <form style="text-align: center">
+            <br />
+            <div class="center" style="background-color: #fff">
+                <h3>Enter payment details</h3>
+                <h4 style="color: rgb(183, 183, 183)">
+                    Please fill out this form
+                </h4>
+                <hr />
+                <img src="../assets/img/visalogo.png" width="60" height="30" />
+                <br />
+                <h4 style="color: rgb(238, 18, 18)">*Required information</h4>
+                Card number: <br />
+                <input type="text" name="cardNumber" /><br /><br />
+                Card holder name: <br />
+                <input type="text" name="cardName" /><br /><br />
+                CVV: <br />
+                <input type="text" name="cardCvv" /><br /><br />
+                Valid until: <br />
+                <input type="text" name="valid" /><br /><br />
+                <input
+                    type="button"
+                    onclick="document.location='payReceipt.html'"
+                    value="Pay"
+                />&nbsp;&nbsp;<input type="reset" value="Reset" />
+            </div>
+        </form>
+        <br />
+    </body>
+</html>
