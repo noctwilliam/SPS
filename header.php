@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once('connect.php');
 	function active($current_page){
 		$url_array =  explode('/', $_SERVER['REQUEST_URI']);

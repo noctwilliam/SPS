@@ -31,7 +31,7 @@ if (isset($_SESSION['admin'])) {
 			<?php } ?>
 			<th>Actions</th>
 		</thead>
-		<tbody>
+		<tbody class="table-group-divider">
 			<?php for ($i = 0; $i < $count; $i++) { ?>
 				<tr>
 					<?php foreach ($row as $key => $value) { ?>
