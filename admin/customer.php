@@ -26,14 +26,20 @@ if (isset($_SESSION['admin'])) {
 			<!-- </tr> -->
 			<td>
 				<a href="customer-edit.php?parkingID=<?= $row['parkingID']; ?>" class="btn btn-primary">Edit</a>
-				<a onclick="confirm('Are you sure you want to delete this reservation?')" href="customer-delete.php?parkingID=<?= $row['parkingID']; ?>" class="btn btn-danger">Delete</a>
+				<a onclick="confirmDelete(event)" href="customer-delete.php?parkingID=<?= $row['parkingID']; ?>" class="btn btn-danger">Delete</a>
 			</td>
 			<?php $row = $result->fetch_assoc(); ?> <!-- to fetch the next table in data -->
 			</tr>
 		<?php } ?>
 	</tbody>
 	</table>
-
+<script>
+	function confirmDelete(event) {
+		if (!confirm('Are you sure you want to delete this record?')) {
+			event.preventDefault();
+		}
+	}
+</script>
 <?php
 } else {
 	header('location: login.php');

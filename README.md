@@ -5,7 +5,7 @@
 Steps to run the project:
 1. Create a database and three tables named `admin`, `customer`, `reservation` in MySQL.
 2. Run the SQL file in the `sql` folder to create the tables.
-3. Create a file named `connect.php` in the `php` folder and add the following code:
+3. Create a file named `connect.php` in the `admin` folder and add the following code:
 ```php
 $host = 'localhost';
 $username = 'root';

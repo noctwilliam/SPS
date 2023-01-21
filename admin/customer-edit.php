@@ -13,35 +13,27 @@ if (isset($_SESSION['admin'])) {
 	$stmt->close();
 
 	if (isset($_POST['update'])) {
-		$val_plateNo = $_POST['plateNo'];
-		$val_carModel = $_POST['carModel'];
-		$val_carColor = $_POST['carColor'];
+		$plateNo = $_POST['plateNo'];
+		$carModel = $_POST['carModel'];
+		$carColor = $_POST['carColor'];
+		$stmt = $conn->prepare("UPDATE customer SET plateNo = ?, carModel = ?, carColor = ? WHERE parkingID = ?");
+		$stmt->bind_param('sssi', $plateNo, $carModel, $carColor, $parkingID);
+		$stmt->execute();
+		$stmt->close();
 
-		$sql = "UPDATE customer SET plateNo = '$val_plateNo', carModel = '$val_carModel', carColor = '$val_carColor' WHERE parkingID = '$parkingID'";
-
-		$execute = mysqli_query($conec, $sql);
-
-		if ($execute) {
-?>
-			<script type="text/javascript">
-				alert("Author updated succesfully");
-			</script>
-		<?php
-			header('Location:authordisplay.php');
+		if ($stmt) {
+			echo "<script>alert('Update successful!')</script>";
+			header('location: customer.php');
 		} else {
-		?>
-			<script type="text/javascript">
-				alert("Author update failed");
-			</script>
-	<?php
-			header('Location:authordisplay.php');
+			echo "<script>alert('Update failed!')</script>";
+			header('location: customer.php');
 		}
 	}
 	?>
 
 	<div class="d-flex justify-content-center">
-		<div class="card px-1 py-4 mt-5">
-			<form action="" method="$_POST">
+		<div class="card px-1 py-2 mt-5">
+			<form action="" method="POST">
 				<div class="card-body">
 					<h6 class="mt-2">Please update the following information regarding car with plate number: <?= $row['plateNo'] ?></h6>
 					<div class="row">

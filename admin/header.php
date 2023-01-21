@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require_once('connect.php');
+	require_once('../connect.php');
 	function active($current_page){
 		$url_array =  explode('/', $_SERVER['REQUEST_URI']);
 		$url = end($url_array);
@@ -22,7 +22,9 @@
 	<!-- Bootstrap Icons -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 	<!-- Custom CSS -->
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<!-- Custom JS -->
+	<script src="../assets/js/main.js"></script>
 </head>
 
 <body>

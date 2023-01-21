@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once('header.php');
 
 if (isset($_SESSION['admin'])) {
@@ -47,15 +46,21 @@ if (isset($_SESSION['admin'])) {
 					<?php } ?>
 					<!-- </tr> -->
 					<td>
-						<a href="reservation-edit.php?reservationID=<?php echo $row['reservationID']; ?>" class="btn btn-primary">Edit</a>
-						<a onclick="confirm('Are you sure you want to delete this reservation?')" href="reservation-delete.php?reservationID=<?php echo $row['reservationID']; ?>" class="btn btn-danger">Delete</a>
+						<a href="reservation-edit.php?reservationID=<?= $row['reservationID']; ?>" class="btn btn-primary">Edit</a>
+						<a onclick="confirmDelete(event)" href="reservation-delete.php?reservationID=<?= $row['reservationID']; ?>" class="btn btn-danger">Delete</a>
 					</td>
 					<?php $row = $result->fetch_assoc(); ?> <!-- to fetch the next data in the table -->
 				</tr>
 			<?php } ?>
 		</tbody>
 	</table>
-
+<script>
+	function confirmDelete(event) {
+		if (!confirm("Are you sure you want to delete this reservation?")) {
+			event.preventDefault();
+		}
+	}
+</script>
 <?php
 }
 else {

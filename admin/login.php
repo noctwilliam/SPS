@@ -1,5 +1,4 @@
 <?php
-	include_once('connect.php');
 	include_once('header.php');
 
 	if (isset($_POST['adminLogin'])) {
