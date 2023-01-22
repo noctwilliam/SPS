@@ -17,7 +17,7 @@
         
         .topnav {
             overflow: hidden;
-            background-color: #8938d5;
+            background-color: #8a39d5;
         }
         
         .topnav a { /**words on nav bar**/
@@ -51,23 +51,23 @@
 </head>
 <body style="background-color: rgb(7, 16, 75);">
     <div class="topnav">
-        <a href="home.html"><img style="height:1cm;" src="logos.jpeg"></a>
+        <a href="home.html"><img style="height:1cm;" src="../assets/img/smart-parking.png"></a>
         <a href="#pay">Pay</a>
         <a href="reserveParking.html">Reserve</a>
         <a href="npForm.html">Navigate</a>
     </div>
     <br>
-    <form style="text-align:center;">
+    <form style="text-align:center;" action="" method="POST">
         <br>
-        <h1 style="color:white; text-align: center">Let's find your car!</h1>
+        <h1 style="color:white; text-align: center">Car Location</h1>
         <div class="center" style="background-color:#fff">
-            <h3>Enter details</h3>
-            <h4 style="color:rgb(183, 183, 183)">Please fill out this form</h4>
-            <hr>
-            
-            Plate number: <br>
-            <input type="text" name="plateNumber"><br/><br/>
-            <input type="button" onclick="document.location='npDisplayLocation.html'" value="Submit">&nbsp;&nbsp;<input type="reset" value="Reset">
+            <h3>Location: B1 01</h3>
+            <br>
+            <video width="320" height="240" controls autoplay>
+                <source src="..assets/vid/backCarVid1.mp4" type="video/mp4">
+            </video>
+            <h3>Is this your car?</h3>
+            <input type="button" onclick="document.location='npPayment.html'" value="Confirm">&nbsp;&nbsp;<input type="button" onclick="document.location='npDisplayCar.html'" value="No">
             
         </div>
     </form>
