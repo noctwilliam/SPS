@@ -51,9 +51,25 @@
             color: #fff;
         }
     </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script>
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var carModel = document.getElementById("carModel").value;
+        var carColor = document.getElementById("carColor").value;
+        var plateNumber = document.getElementById("plateNumber").value;
+        var arriveAfter = document.getElementById("arrive-after").value;
+        var leaveBy = document.getElementById("leave-by").value;
+        if (name == "" || carModel == "" || carColor == "" || plateNumber == "" || arriveAfter == "" || leaveBy == "") {
+            alert("Please fill out all fields");
+        } else {
+            alert("Thank you for reserving!");
+            window.location.href = "chooseParking.html";
+        }
+    }
+</script>
 </head>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <body style="background-color: rgb(7, 16, 75);">
     <div class="topnav">
@@ -71,18 +87,19 @@
             <h4 style="color:rgb(183, 183, 183)">Please fill out this form</h4>
             <hr>
             Name: <br>
-            <input type="text" name="name"><br/><br/>
+            <input type="text" name="name" id="name"><br/><br/>
             Car model: <br>
-            <input type="text" name="carModel"><br/><br/>
+            <input type="text" name="carModel" id="carModel"><br/><br/>
             Car color: <br>
-            <input type="text" name="carColor"><br/><br/>
+            <input type="text" name="carColor" id="carColor"><br/><br/>
             Plate number: <br>
-            <input type="text" name="plateNumber"><br/><br/>
+            <input type="text" name="plateNumber" id="plateNumber"><br/><br/>
             Arrive after: <br>
-            <input type="datetime-local" name="datetime-local"><br/><br/>
+            <input type="datetime-local" name="datetime-local" id="arrive-after"><br/><br/>
             Leave by: <br>
-            <input type="datetime-local" name="datetime-local"><br/><br/>
-            <input type="submit"  class="btn btn-rounded" onclick="document.location='chooseParking.html'">&nbsp;&nbsp;<input type="reset" value="Reset"  class="btn btn-rounded">
+            <input type="datetime-local" name="datetime-local" id="leave-by"><br/><br/>
+            <button type="button" onclick="validateForm()" class="btn btn-rounded">Submit</button>&nbsp;&nbsp;
+            <input type="reset" value="Reset"  class="btn btn-rounded">
             
         </div>
     </form>
