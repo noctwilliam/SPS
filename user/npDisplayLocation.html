@@ -12,7 +12,7 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Arial','Times New Roman', Times, serif;
         }
         
         .topnav {
@@ -57,17 +57,19 @@
         <a href="npForm.html">Navigate</a>
     </div>
     <br>
-    <form style="text-align:center;" action="" method="POST">
+    <form style="text-align:center;">
         <br>
         <h1 style="color:white; text-align: center">Car Location</h1>
         <div class="center" style="background-color:#fff">
             <h3>Location: B1 01</h3>
             <br>
             <video width="320" height="240" controls autoplay>
-                <source src="..assets/vid/backCarVid1.mp4" type="video/mp4">
+                <source src="../assets/vid/backCarVid1.mp4" type="video/mp4">
             </video>
             <h3>Is this your car?</h3>
-            <input type="button" onclick="document.location='npPayment.html'" value="Confirm">&nbsp;&nbsp;<input type="button" onclick="document.location='npDisplayCar.html'" value="No">
+            <input type="button" onclick="document.location='npPayment.html'" value="Confirm">
+            &nbsp;&nbsp;
+            <input type="button" onclick="document.location='npForm.html'" value="No">
             
         </div>
     </form>

@@ -12,7 +12,7 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Arial', Times, serif;
         }
         
         .topnav {
@@ -48,6 +48,18 @@
             color: #fff;
         }
     </style>
+    <script defer>
+        function submitForm() {
+            // display alert if input plateNumber is null
+            var plateNumber = document.getElementById("plateNumber").value;
+            if (plateNumber == null || plateNumber == "") {
+                alert("Please enter your plate number");
+            } else {
+                // lead it to npDisplayLocation.html
+                document.location = "npDisplayLocation.html";
+            }
+        }
+    </script>
 </head>
 <body style="background-color: rgb(7, 16, 75);">
     <div class="topnav">
@@ -57,20 +69,19 @@
         <a href="npForm.html">Navigate</a>
     </div>
     <br>
-    <form style="text-align:center;">
+    <form name="form" action="#">
         <br>
         <h1 style="color:white; text-align: center">Let's find your car!</h1>
         <div class="center" style="background-color:#fff">
             <h3>Enter details</h3>
             <h4 style="color:rgb(183, 183, 183)">Please fill out this form</h4>
             <hr>
-            
             Plate number: <br>
-            <input type="text" name="plateNumber"><br/><br/>
-            <input type="button" onclick="document.location='npDisplayLocation.html'" value="Submit">&nbsp;&nbsp;<input type="reset" value="Reset">
-            
+            <input type="text" name="plateNumber" id="plateNumber" required><br/><br/>
+            <input type="button" value="Submit" onclick="submitForm()">&nbsp;&nbsp;<input type="reset" value="Reset">
         </div>
     </form>
     <br>
 </body>
 </html>
+
