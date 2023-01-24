@@ -62,7 +62,7 @@
 				<input type="password" name="password" class="form-control">
 			</div>
 			<div class="d-flex justify-content-center">
-				<input type="submit" name="adminLogin" class="btn btn-primary" value="Submit"></input>
+				<input type="submit" name="adminLogin" class="btn btn-primary" value="Login"></input>
 			</div>
 		</form>
 	</div>

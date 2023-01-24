@@ -1,13 +1,14 @@
 <?php
-	session_start();
-	require_once('../connect.php');
-	function active($current_page){
-		$url_array =  explode('/', $_SERVER['REQUEST_URI']);
-		$url = end($url_array);
-		if ($current_page == $url) {
-			echo 'active';
-		}
+session_start();
+require_once('../connect.php');
+function active($current_page)
+{
+	$url_array =  explode('/', $_SERVER['REQUEST_URI']);
+	$url = end($url_array);
+	if ($current_page == $url) {
+		echo 'active';
 	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,10 +38,15 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav">
+					<?php 
+					// display the navigation bar only if the admin is logged in
+					if (isset($_SESSION['admin'])) {
+					?>
 						<a class="nav-link <?php active('index.php') ?>" aria-current="page" href="index.php">Home</a>
 						<a class="nav-link <?php active('customer.php') ?>" href="customer.php">Customers</a>
 						<a class="nav-link <?php active('reservation.php') ?>" href="reservation.php">Reservation</a>
 						<a class="nav-link" href="logout.php">Log Out</a>
+					<?php } ?>
 					</div>
 				</div>
 			</div>
