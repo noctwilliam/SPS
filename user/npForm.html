@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+    To change this license header, choose License Headers in Project Properties.
+    To change this template file, choose Tools | Templates
+    and open the template in the editor.
+-->
+<html>
+<head>
+    <title>Navigate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', Times, serif;
+        }
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #8938d5;
+        }
+        
+        .topnav a { /**words on nav bar**/
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .topnav a:hover {
+            background-color: #fdfdfd;
+            color: black;
+        }
+        .center {
+            margin: auto;
+            width: 60%;
+            border: 3px solid;
+            padding: 10px;
+            text-align: center;
+        }
+        .btn {
+            background-color: #FFC0CB;
+            right: 0;
+            margin-top: 10px;
+        }
+        .btn:hover, .btn:active, .btn:focus {
+            color: #fff;
+        }
+    </style>
+    <script defer>
+        function submitForm() {
+            // display alert if input plateNumber is null
+            var plateNumber = document.getElementById("plateNumber").value;
+            if (plateNumber == null || plateNumber == "") {
+                alert("Please enter your plate number");
+            } else {
+                // lead it to npDisplayLocation.html
+                document.location = "npDisplayLocation.html";
+            }
+        }
+    </script>
+</head>
+<body style="background-color: rgb(7, 16, 75);">
+    <div class="topnav">
+        <a href="home.html"><img style="height:1cm;" src="../assets/img/smart-parking.png"></a>
+        <a href="#pay">Pay</a>
+        <a href="reserveParking.html">Reserve</a>
+        <a href="npForm.html">Navigate</a>
+    </div>
+    <br>
+    <form name="form" action="#">
+        <br>
+        <h1 style="color:white; text-align: center">Let's find your car!</h1>
+        <div class="center" style="background-color:#fff">
+            <h3>Enter details</h3>
+            <h4 style="color:rgb(183, 183, 183)">Please fill out this form</h4>
+            <hr>
+            Plate number: <br>
+            <input type="text" name="plateNumber" id="plateNumber" required><br/><br/>
+            <input type="button" value="Submit" onclick="submitForm()">&nbsp;&nbsp;<input type="reset" value="Reset">
+        </div>
+    </form>
+    <br>
+</body>
+</html>
+

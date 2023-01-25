@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--
+    To change this license header, choose License Headers in Project Properties.
+    To change this template file, choose Tools | Templates
+    and open the template in the editor.
+-->
+<html>
+<head>
+    <title>Navigate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', Times, serif;
+        }
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #8938d5;
+        }
+        
+        .topnav a { /**words on nav bar**/
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .topnav a:hover {
+            background-color: #fdfdfd;
+            color: black;
+        }
+        .center {
+            margin: auto;
+            width: 60%;
+            border: 3px solid;
+            padding: 10px;
+            text-align: center;
+        }
+        .btn {
+            background-color: #FFC0CB;
+            right: 0;
+            margin-top: 10px;
+        }
+        .btn:hover, .btn:active, .btn:focus {
+            color: #fff;
+        }
+        .minimal-button {
+            background-color: #555; 
+            color: #fff; 
+            padding: 5px 10px; 
+            border: none; 
+            font-size: 14px; 
+            cursor: auto;
+            transition: background-color 0.2s ease-in-out; 
+            border-radius: 8px;
+        }
+        
+        .minimal-button:hover {
+            background-color: #000F9E; 
+        }
+    </style>
+    <script defer>
+        function validateForm() {
+            var cardNumber = document.getElementById("cardNumber").value;
+            var cardName = document.getElementById("cardName").value;
+            var cardCvv = document.getElementById("cardCvv").value;
+            var cardValidity = document.getElementById("valid").value;
+            var cardNumberRegex = /^[0-9]{16}$/;
+            var cardNameRegex = /^[a-zA-Z ]{2,30}$/;
+            var cardCvvRegex = /^[0-9]{3}$/;
+            var cardValidityRegex = /^[0-9]{2}\/[0-9]{2}$/;
+            if (cardNumberRegex.test(cardNumber) && cardNameRegex.test(cardName) && cardCvvRegex.test(cardCvv) && cardValidityRegex.test(cardValidity)) {
+                alert("Payment successful!");
+                window.location.href = "npReceipt.html";
+            } else {
+                alert("Invalid input!");
+            }
+        }
+        function showForm(formId) {
+            var creditCardForm = document.getElementById("credit-card-form");
+            var onlineBankingForm = document.getElementById("online-banking-form");
+            if (formId === 'credit-card-form') {
+                creditCardForm.style.display = "block";
+                onlineBankingForm.style.display = "none";
+            } else {
+                creditCardForm.style.display = "none";
+                onlineBankingForm.style.display = "block";
+            }
+        }
+        function checkForm() {
+            var bank = document.getElementById("bank-name").value;
+            if (bank=="") {
+                alert("Please select bank");
+            }else {if (bank=="Public Bank"){
+                alert("Payment Error!!!");
+            }else{
+                document.location="npReceipt.html";
+            }
+        }
+    }
+</script>
+</head>
+<body style="background-color: rgb(7, 16, 75);">
+    <div class="topnav">
+        <a href="home.html"><img style="height:1cm;" src="../assets/img/smart-parking.png"></a>
+        <a href="#pay">Pay</a>
+        <a href="reserveParking.html">Reserve</a>
+        <a href="npForm.html">Navigate</a>
+    </div>
+    <br>
+    <div class="center" style="background-color:#fff">
+        <h3>Payment Amount</h3> 
+        <hr>
+        <table class="center" style="border-color:#fff; text-align: left;">
+            <tr>
+                <td>Payment reference</td>
+                <td>Nav110-PID1202</td>
+            </tr>
+            <tr>
+                <td>Amount due</td>
+                <td>RM 50.00</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="credit-card-form" class="center" style="background-color:#fff">
+        <form style="text-align:center;">
+            <h3>Enter payment details</h3>
+            <h4 style="color:rgb(183, 183, 183)">Please fill out this form</h4>
+            <hr>
+            <img src="../assets/img/visalogo.png" width="60" height="30"/>
+            <br>
+            <h4 style="color:rgb(238, 18, 18)">*Required information</h4>
+            Card number: <br>
+            <input type="text" name="cardNumber" id="cardNumber" value="4693080245413915"><br/><br/>
+            Card holder name: <br>
+            <input type="text" name="cardName" id="cardName" value="Harith Azmi"><br/><br/>
+            CVV: <br>
+            <input type="text" name="cardCvv" id="cardCvv" value="387"><br/><br/>
+            Valid until: <br>
+            <input type="text" name="valid" id="valid" value="10/26"><br/><br/>
+            <button type="button" onclick="validateForm()">Pay</button>&nbsp;&nbsp;<input type="reset" value="Reset">
+        </form>
+        <br>
+        <button class="minimal-button" onclick="showForm('online-banking-form')">Pay with Online Banking</button>
+    </div>
+    
+    
+    <div id="online-banking-form" class="center" style="display: none;background-color:#fff">
+        <form style="text-align:center;">
+            <h3>Enter online banking</h3>
+            <h4 style="color:rgb(183, 183, 183)">Choose Bank</h4>
+            <hr>
+            <img src="../assets/img/onlinebank.png" width="180" height="60"/>
+            <br>
+            <label for="bank-name">Bank Name:</label>
+            <select id="bank-name" name="bank-name">
+                <option value="" disabled selected>Select a bank</option>
+                <option value="Maybank">Maybank</option>
+                <option value="CIMB Bank">CIMB Bank</option>
+                <option value="RHB Bank">RHB Bank</option>
+                <option value="Hong Leong Bank">Hong Leong Bank</option>
+                <option value="Affin Bank">Affin Bank</option>
+                <option value="Agro Bank">Agro Bank</option>
+                <option value="Bank Islam">Bank Islam</option>
+                <option value="BSN">BSN</option>
+                <option value="Public Bank">Public Bank</option>
+            </select>
+            <button type="button" onclick="checkForm()">Pay</button>
+        </form>
+        <br>
+        <button class="minimal-button" onclick="showForm('credit-card-form')">Pay with Credit Card</button>
+    </div>
+    <br>
+</body>
+</html>

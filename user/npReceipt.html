@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+    To change this license header, choose License Headers in Project Properties.
+    To change this template file, choose Tools | Templates
+    and open the template in the editor.
+-->
+<html>
+<head>
+    <title>Navigate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #8938d5;
+        }
+        
+        .topnav a { /**words on nav bar**/
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .topnav a:hover {
+            background-color: #fdfdfd;
+            color: black;
+        }
+        .center {
+            margin: auto;
+            width: 60%;
+            border: 3px solid;
+            padding: 10px;
+            text-align: center;
+        }
+        .btn {
+            background-color: #FFC0CB;
+            right: 0;
+            margin-top: 10px;
+        }
+        .btn:hover, .btn:active, .btn:focus {
+            color: #fff;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(7, 16, 75);">
+    <div class="topnav">
+        <a href="home.html"><img style="height:1cm;" src="../assets/img/smart-parking.png"></a>
+        <a href="#pay">Pay</a>
+        <a href="reserveParking.html">Reserve</a>
+        <a href="npForm.html">Navigate</a>
+    </div>
+    <br>
+    <div class="center" style="background-color:#fff">
+        <h3>Navigate Parking Details</h3>
+        <hr>
+        <table class="center" style="border-color:#fff; text-align: left;">
+            <tr>
+                <td>Payment id</td>
+                <td>Nav110-PID1202</td>
+            </tr>
+            <tr>
+                <td>Parking id</td>
+                <td>PID1202</td>
+            </tr>
+            <tr>
+                <td>Plate number</td>
+                <td>WA 4167 C</td>
+            </tr>
+            <tr>
+                <td>Amount due</td>
+                <td>RM 50.00</td>
+            </tr>
+            
+        </table>
+        <input type="button" onclick="document.location='home.html'" value="Main Menu">
+        <br>
+    </div>
+    <br>
+</body>
+</html>
